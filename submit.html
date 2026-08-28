@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>史料线索征集｜醴陵电瓷厂史料档案馆</title>
+    <style>
+        :root{
+            --color-dark-brown:#4A2F20;
+            --color-ochre:#A66F46;
+            --color-light-ochre:#D9B89C;
+            --color-paper:#F7F2EB;
+            --color-text:#2C2018;
+            --color-border:#8C6244;
+        }
+        *{margin:0;padding:0;box-sizing:border-box;font-family:"Noto Serif SC",SimSun,serif;}
+        body{
+            background-color:var(--color-paper);
+            color:var(--color-text);
+            line-height:1.7;
+        }
+        header{
+            background:linear-gradient(135deg,var(--color-dark-brown),var(--color-ochre));
+            color:#fff;
+            padding:2rem 1.5rem;
+            text-align:center;
+            border-bottom:4px solid var(--color-border);
+        }
+        header h1{font-size:2rem;margin-bottom:0.5rem;}
+        nav{
+            background-color:var(--color-dark-brown);
+            position:sticky;
+            top:0;
+            z-index:99;
+        }
+        .nav-wrap{
+            max-width:1200px;
+            margin:0 auto;
+            display:flex;
+            flex-wrap:wrap;
+        }
+        nav a{
+            color:var(--color-light-ochre);
+            text-decoration:none;
+            padding:0.9rem 1.2rem;
+            display:block;
+            transition:0.25s;
+        }
+        nav a:hover{
+            background-color:var(--color-ochre);
+            color:#fff;
+        }
+        main{
+            max-width:850px;
+            margin:0 auto 4rem;
+            padding:0 1rem;
+        }
+        section h2{
+            color:var(--color-dark-brown);
+            border-left:6px solid var(--color-ochre);
+            padding-left:0.8rem;
+            margin:2rem 0 1.2rem;
+            font-size:1.6rem;
+        }
+        .card{
+            background:#fff;
+            border:1px solid var(--color-border);
+            border-radius:6px;
+            padding:1.6rem;
+            box-shadow: 2px 2px 6px rgba(74,47,32,0.12);
+        }
+        .form-item{
+            margin-bottom:1.2rem;
+        }
+        label{
+            display:block;
+            margin-bottom:0.4rem;
+            font-weight:bold;
+            color:var(--color-dark-brown);
+        }
+        input,textarea,select{
+            width:100%;
+            padding:0.8rem;
+            border:2px solid var(--color-border);
+            border-radius:4px;
+            background:#fff;
+            font-size:1rem;
+        }
+        textarea{min-height:140px;resize:vertical;}
+        .btn{
+            background-color:var(--color-ochre);
+            color:white;
+            border:none;
+            padding:0.9rem 1.6rem;
+            font-size:1rem;
+            border-radius:4px;
+            cursor:pointer;
+        }
+        .btn:hover{background-color:var(--color-dark-brown);}
+        .tip-block{
+            background-color:var(--color-light-ochre);
+            padding:1rem;
+            border-radius:4px;
+            margin:1rem 0;
+        }
+        #result-area{
+            display:none;
+            margin-top:1rem;
+            background:#f9f6f0;
+            padding:1rem;
+            border:1px solid var(--color-border);
+            white-space:pre-wrap;
+        }
+        footer{
+            background-color:var(--color-dark-brown);
+            color:var(--color-light-ochre);
+            padding:2rem 1rem;
+            font-size:0.9rem;
+        }
+        .footer-wrap{max-width:1200px;margin:0 auto;}
+        @media(max-width:720px){
+            header h1{font-size:1.6rem;}
+            .nav-wrap{justify-content:center;}
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>史料线索征集</h1>
+    <p>欢迎提供醴陵电瓷厂相关口述、照片、文献线索</p>
+</header>
+<nav>
+    <div class="nav-wrap">
+        <a href="index.html">← 返回档案馆首页</a>
+    </div>
+</nav>
+<main>
+    <section>
+        <h2>征集说明</h2>
+        <div class="card">
+            <p>本平台面向社会征集原醴陵电瓷厂相关史料线索：老职工口述线索、老照片、老物件、旧文件、报刊文献、回忆故事等。</p>
+            <div class="tip-block">
+                <p>⚠️版权提示：提交资料即代表您确认拥有该资料授权；如提供照片请不要提交网络他人版权素材。提交线索后，请复制下方表单生成文本，发送至征集邮箱（替换为你自己的邮箱地址）。本静态网站不能自动接收表单，需要访客邮件报送。</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>线索提交表单</h2>
+        <div class="card">
+            <div class="form-item">
+                <label>线索类型</label>
+                <select id="type">
+                    <option value="口述回忆">口述回忆线索</option>
+                    <option value="老照片影像">老照片/影像线索</option>
+                    <option value="文献档案">文献/老文件线索</option>
+                    <option value="实物物件">老物件线索</option>
+                    <option value="其他史料">其他史料</option>
+                </select>
+            </div>
+            <div class="form-item">
+                <label>联系人（可匿名）</label>
+                <input id="contact" placeholder="填写姓名，愿意留下联系方式可填写，可留空匿名">
+            </div>
+            <div class="form-item">
+                <label>线索详细描述</label>
+                <textarea id="content" placeholder="描述资料内容、年代、来源背景；如果是照片，请描述照片内容；如果是口述，请简述受访对象情况"></textarea>
+            </div>
+            <div class="form-item">
+                <label>补充备注</label>
+                <input id="note" placeholder="例如：是否愿意授权网站公益展示，有无使用限制">
+            </div>
+            <button class="btn" id="genBtn">生成提交文本（复制后发邮件）</button>
+            <div id="result-area"></div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-wrap">
+        <p>醴陵电瓷厂史料档案馆｜史料线索征集</p>
+        <p>公益性项目，资料仅用于历史研究存档。</p>
+    </div>
+</footer>
+
+<script>
+const genBtn = document.getElementById('genBtn');
+genBtn.addEventListener('click',()=>{
+    const type = document.getElementById('type').value;
+    const contact = document.getElementById('contact').value;
+    const content = document.getElementById('content').value;
+    const note = document.getElementById('note').value;
+    const output = `【醴陵电瓷厂史料线索】
+线索类型：${type}
+联系人：${contact||"匿名"}
+线索描述：
+${content}
+补充备注：${note}
+
+——————————————
+请复制全部内容，发送邮件至【替换为你的邮箱地址】
+如有照片附件，可作为邮件附件一并发送。`;
+    const resDom = document.getElementById('result-area');
+    resDom.style.display='block';
+    resDom.innerText = output;
+})
+</script>
+</body>

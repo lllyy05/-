@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>醴陵电瓷厂史料档案馆</title>
+    <style>
+        :root{
+            --color-dark-brown:#4A2F20;
+            --color-ochre:#A66F46;
+            --color-light-ochre:#D9B89C;
+            --color-paper:#F7F2EB;
+            --color-text:#2C2018;
+            --color-border:#8C6244;
+        }
+        *{margin:0;padding:0;box-sizing:border-box;font-family:"Noto Serif SC",SimSun,serif;}
+        body{
+            background-color:var(--color-paper);
+            color:var(--color-text);
+            line-height:1.7;
+        }
+        header{
+            background:linear-gradient(135deg,var(--color-dark-brown),var(--color-ochre));
+            color:#fff;
+            padding:2rem 1.5rem;
+            text-align:center;
+            border-bottom:4px solid var(--color-border);
+        }
+        header h1{font-size:2.2rem;margin-bottom:0.5rem;}
+        header p{opacity:0.9;font-size:1rem;}
+        nav{
+            background-color:var(--color-dark-brown);
+            position:sticky;
+            top:0;
+            z-index:99;
+        }
+        .nav-wrap{
+            max-width:1200px;
+            margin:0 auto;
+            display:flex;
+            flex-wrap:wrap;
+        }
+        nav a{
+            color:var(--color-light-ochre);
+            text-decoration:none;
+            padding:0.9rem 1.2rem;
+            display:block;
+            transition:0.25s;
+        }
+        nav a:hover{
+            background-color:var(--color-ochre);
+            color:#fff;
+        }
+        .search-bar{
+            max-width:1200px;
+            margin:1.5rem auto;
+            padding:0 1rem;
+        }
+        .search-bar input{
+            width:100%;
+            padding:0.8rem 1rem;
+            border:2px solid var(--color-border);
+            border-radius:4px;
+            font-size:1rem;
+            background:#fff;
+        }
+        main{
+            max-width:1200px;
+            margin:0 auto 4rem;
+            padding:0 1rem;
+        }
+        section{
+            margin-bottom:3rem;
+        }
+        section h2{
+            color:var(--color-dark-brown);
+            border-left:6px solid var(--color-ochre);
+            padding-left:0.8rem;
+            margin-bottom:1.2rem;
+            font-size:1.6rem;
+        }
+        .card-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+            gap:1.4rem;
+        }
+        .card{
+            background:#fff;
+            border:1px solid var(--color-border);
+            border-radius:6px;
+            padding:1.3rem;
+            box-shadow: 2px 2px 6px rgba(74,47,32,0.12);
+        }
+        .card h3{
+            color:var(--color-dark-brown);
+            margin-bottom:0.6rem;
+        }
+        .card .meta{
+            font-size:0.88rem;
+            color:#665244;
+            margin-bottom:0.7rem;
+        }
+        .timeline{
+            border-left:3px solid var(--color-ochre);
+            padding-left:1.6rem;
+            margin-left:0.4rem;
+        }
+        .timeline-item{
+            margin-bottom:1.8rem;
+            position:relative;
+        }
+        .timeline-item::before{
+            content:"";
+            width:12px;height:12px;
+            background:var(--color-ochre);
+            border-radius:50%;
+            position:absolute;
+            left:-2.25rem;
+            top:4px;
+        }
+        .timeline-year{
+            font-weight:bold;
+            color:var(--color-dark-brown);
+        }
+        .placeholder-media{
+            background-color:var(--color-light-ochre);
+            border:1px dashed var(--color-border);
+            padding:2.5rem 1rem;
+            text-align:center;
+            color:var(--color-dark-brown);
+            margin:0.8rem 0;
+        }
+        a.link-item{
+            color:#804020;
+        }
+        a.link-item:hover{
+            color:#b35c30;
+        }
+        footer{
+            background-color:var(--color-dark-brown);
+            color:var(--color-light-ochre);
+            padding:2rem 1rem;
+            font-size:0.9rem;
+        }
+        .footer-wrap{max-width:1200px;margin:0 auto;}
+        .hidden{display:none;}
+        @media(max-width:720px){
+            header h1{font-size:1.6rem;}
+            .nav-wrap{justify-content:center;}
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>醴陵电瓷厂史料档案馆</h1>
+    <p>国营醴陵电瓷厂厂史 · 口述记录 · 影像文献资料收录平台</p>
+</header>
+<nav>
+    <div class="nav-wrap">
+        <a href="#home">首页</a>
+        <a href="#history">厂史沿革</a>
+        <a href="#oral">口述史料库</a>
+        <a href="#gallery">影像资料库</a>
+        <a href="#docs">文献图文链接</a>
+        <a href="submit.html">史料线索征集</a>
+    </div>
+</nav>
+
+<div class="search-bar">
+    <input id="searchInput" placeholder="搜索：年份、人名、事件、史料关键词..." />
+</div>
+
+<main id="home">
+    <section>
+        <h2>档案馆简介</h2>
+        <div class="card">
+            <p>本网页为民间公益性史料收录站点，致力于整理保存原湖南省醴陵电瓷厂的历史资料。收录范围包含企业沿革大事记、老职工口述访谈记录、厂区老照片、实物影像、相关新闻与研究文献链接。所有资料仅供历史研究、学习参考，非商业用途。</p>
+            <p style="margin-top:0.6rem;">提示：网站内图片区域全部为占位框，正式使用请放入您自己采集、拥有授权的照片素材，规避版权风险。引用外部资料请标注来源出处。</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>厂史大事记（示例框架）</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">1946</div>
+                <div>前身中国电瓷厂创立，醴陵电瓷工业起步，为国内早期电瓷生产单位。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1960</div>
+                <div>正式定名湖南省醴陵电瓷厂，成为全国重要国营高压电瓷生产基地，为国内电力工程供应绝缘子产品。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1970‑1980年代</div>
+                <div>产品配套国内大型水利、输电工程，同时对外出口，“凡有电网处，必有醴陵瓷”成为行业评价。</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1999‑2009</div>
+                <div>国企改制，老醴陵电瓷厂完成体制转变，原有厂区、职工、生产历史成为工业史研究对象。</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="history">
+        <h2>厂史沿革｜官方记录</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>建厂与早期发展</h3>
+                <div class="meta">资料类型：厂史综述</div>
+                <p>此处填入：建厂背景、隶属关系变化、早期生产条件、重要产品、机构变迁。替换为你整理的文字资料。</p>
+            </div>
+            <div class="card">
+                <h3>国营鼎盛时期</h3>
+                <div class="meta">资料类型：厂史综述</div>
+                <p>此处填入：工厂规模、职工群体、重大工程项目配套、技术突破、荣誉记录。</p>
+            </div>
+            <div class="card">
+                <h3>改制与时代变迁</h3>
+                <div class="meta">资料类型：厂史综述</div>
+                <p>此处填入：改制全过程、人员分流、厂区变迁、工业遗产留存情况。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="oral">
+        <h2>口述史料库｜老职工访谈记录</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>访谈记录001｜老工人生产回忆</h3>
+                <div class="meta">访谈时间：202X年｜受访人：（填写）｜资料状态：原始记录</div>
+                <p>此处粘贴你的口述访谈原始转录文本。保持口述原貌，不做文学润色。</p>
+            </div>
+            <div class="card">
+                <h3>访谈记录002｜厂区生活记忆</h3>
+                <div class="meta">访谈时间：202X年｜受访人：（填写）｜资料状态：原始记录</div>
+                <p>记录职工宿舍、食堂、子弟学校、工厂社区生活相关口述内容。</p>
+            </div>
+            <div class="card">
+                <h3>访谈记录003｜改制时期亲历讲述</h3>
+                <div class="meta">访谈时间：202X年｜受访人：（填写）｜资料状态：原始记录</div>
+                <p>记录国企改制阶段职工亲身经历、感受。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>影像资料库｜老照片、视频素材</h2>
+        <div class="card">
+            <h3>厂区旧貌</h3>
+            <div class="meta">提示：放入自有/授权照片，不要直接下载网络别人发布老图，避免侵权</div>
+            <div class="placeholder-media">【照片占位框：厂区老照片】</div>
+            <div class="placeholder-media">【照片占位框：车间生产老照片】</div>
+        </div>
+        <div class="card">
+            <h3>产品、证件、实物影像</h3>
+            <div class="placeholder-media">【照片占位框：电瓷产品、老证书、老物件实拍】</div>
+        </div>
+        <div class="card">
+            <h3>相关视频（外链）</h3>
+            <p>视频不直接上传，放置外部公开链接：</p>
+            <p>▶ <a class="link-item" href="#">相关纪录片链接（自行填写公开可访问链接）</a></p>
+            <p>▶ <a class="link-item" href="#">媒体采访视频链接</a></p>
+            <p>说明：仅做外部跳转，不拷贝视频文件到本站。</p>
+        </div>
+    </section>
+
+    <section id="docs">
+        <h2>文献图文链接库</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>新闻报道资料</h3>
+                <p>• <a class="link-item" href="#">公开媒体报道链接（自行填写）</a></p>
+                <p>• <a class="link-item" href="#">行业相关报道链接</a></p>
+                <div class="meta">引用外部资料务必标注来源与原出处</div>
+            </div>
+            <div class="card">
+                <h3>研究文献、地方史资料</h3>
+                <p>• <a class="link-item" href="#">陶瓷志、地方志相关章节链接</a></p>
+                <p>• <a class="link-item" href="#">学术论文、工业史研究资料</a></p>
+            </div>
+            <div class="card">
+                <h3>档案摘抄</h3>
+                <p>此处放置你摘抄公开档案文件片段，注明档案来源、卷宗编号。</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-wrap">
+        <h4>醴陵电瓷厂史料档案馆 · 版权与使用声明</h4>
+        <p>本网站为公益性历史资料收录站点，不用于商业用途。</p>
+        <p>1.口述记录为实地访谈采集，版权归受访者与采集者所有；</p>
+        <p>2.引用外部文献、图片，必须标注原始出处；请勿直接抓取互联网他人享有版权的老照片；</p>
+        <p>3.站内所有资料仅供学术研究、历史查阅，转载请联系资料权利人。</p>
+        <p>4.网页程序代码本身可自由修改使用。</p>
+    </div>
+</footer>
+
+<script>
+//简易本地搜索功能
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('input',function(){
+    const keyword = this.value.trim().toLowerCase();
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card=>{
+        const text = card.innerText.toLowerCase();
+        if(keyword==="" || text.includes(keyword)){
+            card.classList.remove('hidden');
+        }else{
+            card.classList.add('hidden');
+        }
+    })
+})
+//页面内锚点平滑滚动
+document.querySelectorAll('nav a').forEach(a=>{
+    a.addEventListener('click',e=>{
+        e.preventDefault();
+        const targetId = a.getAttribute('href');
+        const targetDom = document.querySelector(targetId);
+        if(targetDom) targetDom.scrollIntoView({behavior:'smooth'});
+    })
+})
+</script>
+</body>
+</html>
